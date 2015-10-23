@@ -1,0 +1,242 @@
+/** Styling for a prettified view of XHTML overscript.
+  *
+  * root> (f=tool/xhosPretty/pretty.css; cp --interactive /mnt/lan/obsidian/var/www/localhost/htdocs/100-0/$f /home/mike/100-0/$f)
+  *
+  * For information on overscript itself, see OVERSCRIPT in pretty.js.
+  */
+@namespace h 'http://www.w3.org/1999/xhtml';
+@namespace o 'data:,overware.overscript';
+
+
+h|html
+{
+    background-color: #303030;
+    color: hsl( 0, 0%, 76% );
+}
+
+
+o|*
+{
+    display: block;
+}
+
+
+o|*:before
+{
+    border-radius: 0.5em/50%; /* for sake of box-shadow */
+    font-weight: bold;
+    margin-right: 0.3em;
+}
+
+
+
+/** - a --------------------------------
+  */
+h|a
+{
+    text-decoration: none; /* underlines are distracting here */
+}
+
+
+
+/** - box ------------------------------
+  */
+o|box:before
+{
+    color: hsl( 0, 0%, 100% );
+    content: 'box ';
+}
+
+
+
+/** - end ------------------------------
+  */
+o|end, o|means
+{
+    color: hsl( 0, 0%, 50% );
+}
+
+
+o|end:before
+{
+    content: 'end ';
+}
+
+
+o|end:after, o|means:after
+{
+    color: hsl( 0, 0%, 45% );
+    content: '\a0\20' attr(href); /* non-breaking space \a0 or no space is rendered */
+}
+
+
+o|end[class~='js']:before, o|means[class~='js']:before,
+o|end[class~='js']:after,  o|means[class~='js']:after
+{
+    content: normal; /* let pretty.js alone generate the content */
+}
+
+
+o|end h|a.relation
+{
+    padding-right: 0.2em;
+}
+
+
+o|end h|a.relation[href]
+{
+    color: hsl( 240, 50%, 75% );
+}
+
+
+o|end h|a.relation[href] span:first-child
+{
+    color: hsl( 240, 0%, 30% );
+}
+
+
+o|end h|a.relation[href] span + span
+{
+    color: hsl( 240, 15%, 50% );
+}
+
+
+o|end h|a.self
+{
+    padding-left: 0.3em;
+    padding-right: 0.3em; /* more click area */
+}
+
+
+
+/** - h2 -------------------------------
+  */
+h|h2
+{
+    color: hsl( 0, 0%, 65% );
+}
+
+
+h|h2 span
+{
+    color: hsl( 0, 0%, 45% );
+    font-weight: normal;
+}
+
+
+
+/** - loop -----------------------------
+  */
+o|loop:before
+{
+    color: hsl( 0, 0%, 100% );
+    content: 'loop ';
+}
+
+
+
+/** - means ----------------------------
+  */
+o|means:before
+{
+    content: 'means ';
+}
+
+
+o|means h|a.relation
+{
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+}
+
+
+o|means h|a.relation[href]
+{
+    color: hsl( 300, 50%, 60% );
+}
+
+
+
+/** - overscript -----------------------
+  */
+o|overscript:before
+{
+    content: none;
+}
+
+
+o|overscript o|* > o|*
+{
+    border-left: thin solid #555;
+    margin-left: 0.9em;
+    padding-left: 0.9em;
+}
+
+
+
+/** - self -----------------------------
+  */
+h|a.self
+{
+    color: hsl( 0, 0%, 65% );
+    margin-right: 0.3em;
+}
+
+
+h|a.self:before, h|a.self:after
+{
+    color: hsl( 0, 0%, 45% );
+}
+h|a.self:before
+{
+    content: '(';
+}
+h|a.self:after
+{
+    content: ')';
+}
+
+
+
+/** - sequence -------------------------
+  */
+o|sequence:before
+{
+    color: hsl( 0, 0%, 100% );
+    content: 'sequence ';
+}
+
+
+
+/** - step -----------------------------
+  */
+o|step:before
+{
+    color: hsl(120, 70%, 75%);
+    content: 'step ';
+}
+
+
+
+/** - targeted -------------------------
+  */
+o|*[class~='targeted']:before, h|body.targeted o|overscript
+{
+    box-shadow: 0 0 1.6em 0.8em hsl(240, 55%, 70%), /* x y blur spread colour */
+                0 0 0.4em 0.2em hsl(240, 55%, 70%) inset;
+}
+o|end[class~='targeted'] a.relation
+{
+    box-shadow: 0 0 1.6em 0.8em hsl(300, 50%, 60%), /* x y blur spread colour */
+                0 0 0.4em 0.2em hsl(300, 50%, 60%) inset;
+}
+
+
+o|*[class~='targeted_visibilityOff']:before, h|body.targeted_visibilityOff o|overscript,
+o|end[class~='targeted_visibilityOff'] a.relation
+{
+    box-shadow: none; /* fails on IE9, see pretty.js */
+    transition: box-shadow 3.0s ease-out; /* property, duration, timing function, delay
+      Intermittently fails with delay (Firefox 31.7), so coding delay in pretty.js.
+      Changing duration?  Ensure adequate timeout for removeStyleClass in pretty.js. */
+}
