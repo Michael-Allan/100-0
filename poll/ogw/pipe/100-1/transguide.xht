@@ -11,29 +11,79 @@
 <box id='No'>
     No actual overguideway to problematize
     <sequence id='OverrepoNav'>
-        <means href='http://reluk.ca/100-0/poll/x/pipe/100-0/action.xht'/>
+        <means href='http://reluk.ca/100-0/poll/x/pipe/100-0/act.xht'/>
         <step>
             Code the Android UI far enough to navigate the overscript of the local overrepo
             <!--
 
-    = commit code and overrepo
-    - action cues in overguide UI
-        ( as per notebook 2015.7.3
-        - from norms decided by elected officials (laws, ministerial plans, etc) to election
-            - lines "lit up" where a shift of one's electoral vote would help to execute the norm
-        - from all norms to executive
-            - rightward lines show amount of executive recognition on offer
-            - so one can seek executive branches that need help
-    - getting a demo of the UI published ASAP
-        ( personal need
-        = code the entry view of UI
-            - end (poll/1)
-        = code overguideway web API
-            - just enough to form the empty, unadjusted cache from that source
-        = code overguideway count
-            - based on a copy of my overrepo alone
-        = test maintenance of consistency between count and precount
-    = plan further
+    [ major button
+        - to move meansward
+        (+) mode
+            - zooms into transguide
+                - when either in forester view, or in transguide element that has multiple means relations
+        (→) mode
+            - follows the causal relation meansward
+    - synergy that drives overguideway completion
+        ( notebook 2015.10.26
+        - among
+            * overguideway
+            * textual elements of transguide
+            * major button
+        - by way of visual correspondence of causal relations ←
+            ( notebook 2015.10.26
+            - in (v, p, c):
+
+                                 (v) view of incompletion
+
+                                  /
+                                 /
+            end ← foo ←                   ··· act                   (overguideway)
+
+
+                Lorem ipsum et dolore
+
+                    Lorem ipsum dolor sit amet
+
+                    Consectetur adipiscing elit  ←                   (textual elements
+                                                                      of transguide)
+                    Ded do eiusmod tempor
+
+                    Incididunt ut labore         ←  ----  (p) preview of
+                                                              completion
+                  ← Et dolore magna aliqua
+
+
+                                               (→)                   (major button)
+
+                                                  \
+                                                   \
+
+                                                  (c) control of completion
+
+    - renamed terminal polls
+        - 1 -> end
+        - 0 -> act
+/       ! Overlay FS is saving all changes to upper directory
+/           ( tried edit directly from union dir (not symlink) and still saves to wrong underlying dir
+/           - test
+/               root> cd /tmp/x
+/               root> mount -t overlay -o lowerdir=L,upperdir=U,workdir=W overlay X
+/               root> echo 'a change' >> X/lower.txt
+/               root> umount X
+/           - search
+/               ( lowerdir OR "lower dir" OR "lower directory" upperdir OR "upper dir" OR "upper directory"
+/           = fix
+/               < http://unix.stackexchange.com/questions/239416
+/               > mount /boot
+/                   > e /boot/grub/grub.conf
+/                   = edit to boot kernel 4.2.4-2aufs
+/                   > umount /boot
+/           = correct overware repo
+/               - it's written mods to lower 'all' directory
+        = commit repos
+            - with code change "Rename end poll from '1' to 'end'."
+    = play by intution
+        ( within the UI boundary defined by the annotated "fence posts" above
 
                 -->
             </step>

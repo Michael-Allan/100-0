@@ -8,7 +8,7 @@
   *     - document filenames:
   *         | end.xht (purely end)
   *         | transguide.xht (both means and end)
-  *         | action.xht (purely means)
+  *         | act.xht (purely means)
   * - content form is extended XHTML
   *     ( roughly as per notebook 2015.2.20
   *     - custom elements are grudgingly allowed in XHTML5
