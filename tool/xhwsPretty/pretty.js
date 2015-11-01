@@ -1,13 +1,13 @@
 /**                                                                                       -*- coding:utf-8; -*-
-  *   A transformer of XHTML overscript into a prettier, more useful form.
+  *   A transformer of XHTML wayscript into a prettier, more useful form.
   *
-  * OVERSCRIPT
+  * WAYSCRIPT
   *
   * - location
   *     - in dedicated position documents
   *     - document filenames:
   *         | end.xht (purely end)
-  *         | transguide.xht (both means and end)
+  *         | transnorm.xht (both means and end)
   *         | act.xht (purely means)
   * - content form is extended XHTML
   *     ( roughly as per notebook 2015.2.20
@@ -43,7 +43,7 @@
   *
   * SWATCH
   *
-  *   root> (f=tool/xhosPretty/pretty.js; cp --interactive /mnt/lan/obsidian/var/www/localhost/htdocs/100-0/$f /home/mike/100-0/$f)
+  *   root> (f=tool/xhwsPretty/pretty.js; cp --interactive /mnt/lan/obsidian/var/www/localhost/htdocs/100-0/$f /home/mike/100-0/$f)
   */
 ( function()
 {
@@ -66,13 +66,13 @@
 
 
 
-    /** The pattern of a filename that might contain an overscript <end> link.
+    /** The pattern of a filename that might contain an wayscript <end> link.
       */
-    var meansFilePattern = new RegExp( '(?:transguide|action)\\.xht$' );
+    var meansFilePattern = new RegExp( '(?:transnorm|act)\\.xht$' );
 
 
 
-    /** Extracts the poll name from an overrepo file location.
+    /** Extracts the poll name from an wayrepo file location.
       *
       *     @param loc (String) The file location in URL form.
       *     @return (String) The poll name, or 'pollUnknown' if there is none.
@@ -86,10 +86,6 @@
 
         var pollNameFromLoc_regExp = new RegExp( '/poll/([0-9A-Za-z]+)/' );
           //                                             REP SERIAL
-
-
-
-    var O = 'data:,overware.overscript';
 
 
 
@@ -121,7 +117,7 @@
             var e = walker.nextNode();
             if( !e ) break;
 
-            if( e.namespaceURI != O ) continue;
+            if( e.namespaceURI != W ) continue;
 
             var eChild = e.firstChild;
             var eName = e.localName;
@@ -231,7 +227,7 @@
                 selfLink.className = 'self';
                 selfLink.href = '#' + id;
                 if( !document.getElementById( id )) selfLink.id = id; /* Actualize ID by
-                  assigning it to an attribute of type ID.  Overscript lacks such
+                  assigning it to an attribute of type ID.  Wayscript lacks such
                   attributes (lacks DTD), so use an HTML attribute instead. */
                   // else probably a previous <end> link is targetting the same href
                 if( !idBody ) idBody = id;
@@ -275,6 +271,10 @@
             }, 300/*ms delay*/ );
         }
     }
+
+
+
+    var W = 'data:,waymaker.wayscript';
 
 
 

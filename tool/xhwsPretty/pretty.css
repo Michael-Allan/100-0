@@ -1,11 +1,11 @@
-/** Styling for a prettified view of XHTML overscript.
+/** Styling for a prettified view of XHTML wayscript.
   *
-  * root> (f=tool/xhosPretty/pretty.css; cp --interactive /mnt/lan/obsidian/var/www/localhost/htdocs/100-0/$f /home/mike/100-0/$f)
+  * root> (f=tool/xhwsPretty/pretty.css; cp --interactive /mnt/lan/obsidian/var/www/localhost/htdocs/100-0/$f /home/mike/100-0/$f)
   *
-  * For information on overscript itself, see OVERSCRIPT in pretty.js.
+  * For information on wayscript itself, see WAYSCRIPT in pretty.js.
   */
 @namespace h 'http://www.w3.org/1999/xhtml';
-@namespace o 'data:,overware.overscript';
+@namespace w 'data:,waymaker.wayscript';
 
 
 h|html
@@ -15,13 +15,13 @@ h|html
 }
 
 
-o|*
+w|*
 {
     display: block;
 }
 
 
-o|*:before
+w|*:before
 {
     border-radius: 0.5em/50%; /* for sake of box-shadow */
     font-weight: bold;
@@ -41,7 +41,7 @@ h|a
 
 /** - box ------------------------------
   */
-o|box:before
+w|box:before
 {
     color: hsl( 0, 0%, 100% );
     content: 'box ';
@@ -51,57 +51,57 @@ o|box:before
 
 /** - end ------------------------------
   */
-o|end, o|means
+w|end, w|means
 {
     color: hsl( 0, 0%, 50% );
 }
 
 
-o|end:before
+w|end:before
 {
     content: 'end ';
 }
 
 
-o|end:after, o|means:after
+w|end:after, w|means:after
 {
     color: hsl( 0, 0%, 45% );
     content: '\a0\20' attr(href); /* non-breaking space \a0 or no space is rendered */
 }
 
 
-o|end[class~='js']:before, o|means[class~='js']:before,
-o|end[class~='js']:after,  o|means[class~='js']:after
+w|end[class~='js']:before, w|means[class~='js']:before,
+w|end[class~='js']:after,  w|means[class~='js']:after
 {
     content: normal; /* let pretty.js alone generate the content */
 }
 
 
-o|end h|a.relation
+w|end h|a.relation
 {
     padding-right: 0.2em;
 }
 
 
-o|end h|a.relation[href]
+w|end h|a.relation[href]
 {
     color: hsl( 240, 50%, 75% );
 }
 
 
-o|end h|a.relation[href] span:first-child
+w|end h|a.relation[href] span:first-child
 {
     color: hsl( 240, 0%, 30% );
 }
 
 
-o|end h|a.relation[href] span + span
+w|end h|a.relation[href] span + span
 {
     color: hsl( 240, 15%, 50% );
 }
 
 
-o|end h|a.self
+w|end h|a.self
 {
     padding-left: 0.3em;
     padding-right: 0.3em; /* more click area */
@@ -127,7 +127,7 @@ h|h2 span
 
 /** - loop -----------------------------
   */
-o|loop:before
+w|loop:before
 {
     color: hsl( 0, 0%, 100% );
     content: 'loop ';
@@ -137,35 +137,35 @@ o|loop:before
 
 /** - means ----------------------------
   */
-o|means:before
+w|means:before
 {
     content: 'means ';
 }
 
 
-o|means h|a.relation
+w|means h|a.relation
 {
     padding-left: 0.2em;
     padding-right: 0.2em;
 }
 
 
-o|means h|a.relation[href]
+w|means h|a.relation[href]
 {
     color: hsl( 300, 50%, 60% );
 }
 
 
 
-/** - overscript -----------------------
+/** - wayscript ------------------------
   */
-o|overscript:before
+w|wayscript:before
 {
     content: none;
 }
 
 
-o|overscript o|* > o|*
+w|wayscript w|* > w|*
 {
     border-left: thin solid #555;
     margin-left: 0.9em;
@@ -200,7 +200,7 @@ h|a.self:after
 
 /** - sequence -------------------------
   */
-o|sequence:before
+w|sequence:before
 {
     color: hsl( 0, 0%, 100% );
     content: 'sequence ';
@@ -210,7 +210,7 @@ o|sequence:before
 
 /** - step -----------------------------
   */
-o|step:before
+w|step:before
 {
     color: hsl(120, 70%, 75%);
     content: 'step ';
@@ -220,20 +220,20 @@ o|step:before
 
 /** - targeted -------------------------
   */
-o|*[class~='targeted']:before, h|body.targeted o|overscript
+w|*[class~='targeted']:before, h|body.targeted w|wayscript
 {
     box-shadow: 0 0 1.6em 0.8em hsl(240, 55%, 70%), /* x y blur spread colour */
                 0 0 0.4em 0.2em hsl(240, 55%, 70%) inset;
 }
-o|end[class~='targeted'] a.relation
+w|end[class~='targeted'] a.relation
 {
     box-shadow: 0 0 1.6em 0.8em hsl(300, 50%, 60%), /* x y blur spread colour */
                 0 0 0.4em 0.2em hsl(300, 50%, 60%) inset;
 }
 
 
-o|*[class~='targeted_visibilityOff']:before, h|body.targeted_visibilityOff o|overscript,
-o|end[class~='targeted_visibilityOff'] a.relation
+w|*[class~='targeted_visibilityOff']:before, h|body.targeted_visibilityOff w|wayscript,
+w|end[class~='targeted_visibilityOff'] a.relation
 {
     box-shadow: none; /* fails on IE9, see pretty.js */
     transition: box-shadow 3.0s ease-out; /* property, duration, timing function, delay
