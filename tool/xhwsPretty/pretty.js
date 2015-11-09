@@ -66,13 +66,13 @@
 
 
 
-    /** The pattern of a filename that might contain an wayscript <end> link.
+    /** The pattern of a filename that might contain a wayscript <end> link.
       */
     var meansFilePattern = new RegExp( '(?:transnorm|act)\\.xht$' );
 
 
 
-    /** Extracts the poll name from an wayrepo file location.
+    /** Extracts the poll name from a wayrepo file location.
       *
       *     @param loc (String) The file location in URL form.
       *     @return (String) The poll name, or 'pollUnknown' if there is none.
