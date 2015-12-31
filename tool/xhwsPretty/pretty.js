@@ -10,7 +10,7 @@
   *         | transnorm.xht (both means and end)
   *         | act.xht (purely means)
   * - content form is extended XHTML
-  *     ( roughly as per notebook 2015.2.20
+  *     ( roughly notebook 2015.2.20
   *     - custom elements are grudgingly allowed in XHTML5
   *         " vendors should use the namespace mechanism to define custom namespaces
   *           in which the non-standard elements and attributes are supported
@@ -22,7 +22,7 @@
   *               but that's going out on a limb these days
   *                 ( https://groups.google.com/a/chromium.org/forum/#!topic/blink-dev/zIg2KC7PyH0[1-25]
   * - elements:
-  *     ( as per notebook 2015.2.20
+  *     ( notebook 2015.2.20
   *     | <box>
   *         - unordered container
   *     | <end>
