@@ -6,7 +6,7 @@
         <title>What are the problems of the waykit?</title>
         </head>
     <body>
-        <wayscript xmlns='data:,waymaker.wayscript'> <!-- <<< deindent -->
+        <wayscript xmlns='data:,wayrepo.wayscript'> <!-- <<< deindent -->
 
 <box id='No'>
     No actual waykit to problematize
@@ -16,33 +16,50 @@
             Code the Android UI far enough to range the ways of the local wayrepo
             <!--
 
-    - forest view
-        - synchronize
-            - pooling component views for reuse
-            = code the minimum in order to test a climb
-                = ensure that animation works as expected
-                    " setLayoutTransition( new /*default*/LayoutTransition() ); // animate layout changes
-                    < http://developer.android.com/guide/topics/graphics/prop-animation.html#layout
-                    - may need to customize using LayoutTransition.setAnimator
-                = repopulate on forester movement
-                    - comparing candidate path vs. model
-                        ( notebook 2015.12.26
-            = constrain candidate addition
-            = constrain peer addition
-                - also using the constraint to guard and constrain call to enqueuePeersRequest
-            = reconstrain on calibration change
-                - direct call from calibrator
+/   - test asserts on clean build
+/       ! fails
+    = test restore
+    = code the minimum in order to test a climb
+        - elaborating node view
+            ( else climbing is unrealistic
+/           - the handle
+/               = test for whitespace stripping
+            = commit
+                " Handles for waynodes.
+            = the summary
+                - right across screen width
+                - wayscope to eclipse it somehow when zoomed in
+        = add question display to design sketch of wayranging view
+        = enable up climber in ForestV
+            ( notebook 2016.1.1
+            - but requesting voters (enqueuePeersRequest) on demand, not proactively
+                = note in ServerCount need to test effect of slow responses in UI,
+                  where the current implementation might not allow for this
+                    - minimal allowance would be addition of information
+                      to indicate temporary|uncertain|pending state at point of effect
+            = likewise back current use of enqueuePeersRequest to point of demand
+                - reduces unecessary polling, gives user more control
+        = define real positions near root
+        = have node handles share same minimal width
+            - for stability of forest view
+            - expandable within limits
+        = ensure that animation works as expected
+            " setLayoutTransition( new /*default*/LayoutTransition() ); // animate layout changes
+            < http://developer.android.com/guide/topics/graphics/prop-animation.html#layout
+            - may need to customize using LayoutTransition.setAnimator
+        = repopulate ForestV on forester movement
+            - comparing candidate path vs. model
+                ( notebook 2015.12.26
+    [ forest view
+        = constrain candidate addition
+        = constrain peer addition
+            - also using the constraint to guard and constrain call to enqueuePeersRequest
+        = reconstrain on calibration change
+            - direct call from calibrator
         = allow for case of overconstrained parent in ForestVCalibrator
             ( deferred from above, for realistic test
             - detected by squeezed height of down climber (bottom component) compared to up climber
             - calibrated by (somehow) measuring height parent wants, compared with actual height available
-        = indicate chosen node
-            - non-commitally, as visual requirements are yet unsettled
-                ( e.g. node view draws a rough indicator to right, out of bounds
-            - from Wayranging.pollarActorIdentifier, cf. VotingID
-                = clear up this confusion of names
-                    | PollarActorID
-                    | Wayranging.votingIdentifier
         - peer paging
             ( notebook 2015.12.14, 15
             - long press to enable paging control
@@ -54,13 +71,6 @@
                     - rather: automatically despecify in both cases
                         - and respecify in back cases, provided nothing else specified meantime
                 - any other press will reveal a fading cue that explains the mechanism
-        - cueing the swipe gesture to climb tree
-            - no longer crucial, given paging controls, but still useful
-            - on first view, view being
-                | grounded
-                    - slide in and bounce to stop, so indicate continued slideability
-                | ungrounded
-                    - climb incrementally to position, clearly enuniating each slide in the climb
 
                 -->
             </step>

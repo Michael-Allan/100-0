@@ -9,8 +9,9 @@
   *         | end.xht (purely end)
   *         | transnorm.xht (both means and end)
   *         | act.xht (purely means)
-  * - content form is extended XHTML
+  * - form
   *     ( roughly notebook 2015.2.20
+  *     - extended XHTML
   *     - custom elements are grudgingly allowed in XHTML5
   *         " vendors should use the namespace mechanism to define custom namespaces
   *           in which the non-standard elements and attributes are supported
@@ -21,25 +22,35 @@
   *             - might use XSLT to render it as HTML,
   *               but that's going out on a limb these days
   *                 ( https://groups.google.com/a/chromium.org/forum/#!topic/blink-dev/zIg2KC7PyH0[1-25]
-  * - elements:
-  *     ( notebook 2015.2.20
-  *     | <box>
-  *         - unordered container
-  *     | <end>
-  *         - link to end (mandatory to specify)
-  *         - definitive of symmetric end-means relation (end implying means, and means end)
-  *     | <means>
-  *         - link to means (optional to specify)
-  *         - serves only:
-  *             - to implement means-ward links in web browsers
-  *               where they cannot easily be generated automatically based on <end> links
-  *             - to set a default position for means-ward navigation when (the usual case)
-  *               multiple positions encode the same <end> link
-  *         - if contains empty <a/> placeholder, then hyperlink is rendered there
-  *     - <step>
-  *         - action element
-  *     - <sequence>|<loop>
-  *         - ordered container
+  *     - framing elements:
+  *         - <title>
+  *             - the common question of the poll that all positions answer
+  *             ( title of the leading position will rule, as I think I documented somewhere
+  *         - <wayscript>
+  *             - the answer to the question of the <title> in wayscript form
+  *         - <handle> of <wayscript>
+  *             ( http://reluk.ca/project/waymaker/spec/javadoc/waymaker/top/android/Waynode.html#handle--
+  *     - way elements:
+  *         ( notebook 2015.2.20
+  *         - <box>
+  *             - unordered container
+  *         - <step>
+  *             - action
+  *         - ordered containers:
+  *             - <loop>
+  *             - <sequence>
+  *         - end-means links:
+  *             - <end>
+  *                 - link to end (mandatory to specify)
+  *                 - definitive of symmetric end-means relation (end implying means, and means end)
+  *             - <means>
+  *                 - link to means (optional to specify)
+  *                 - serves only:
+  *                     - to implement means-ward links in web browsers
+  *                       where they cannot easily be generated automatically based on <end> links
+  *                     - to set a default position for means-ward navigation when (the usual case)
+  *                       multiple positions encode the same <end> link
+  *                 - if contains empty <a/> placeholder, then hyperlink is rendered there
   *
   * SWATCH
   *
@@ -274,7 +285,7 @@
 
 
 
-    var W = 'data:,waymaker.wayscript';
+    var W = 'data:,wayrepo.wayscript';
 
 
 
