@@ -22,14 +22,23 @@
   *             - might use XSLT to render it as HTML,
   *               but that's going out on a limb these days
   *                 ( https://groups.google.com/a/chromium.org/forum/#!topic/blink-dev/zIg2KC7PyH0[1-25]
+  *     - title sentence
+  *         ( form of leading text for most elements
+  *         - short sentence, usable as a title
+  *         - leading letter is capitalized
+  *         - trailing punctuation is omitted
+  *             - except a question mark is retained
   *     - framing elements:
   *         - <title>
-  *             - the common question of the poll that all positions answer
+  *             - the common question posed by the poll, that all positions answer
   *             ( title of the leading position will rule, as I think I documented somewhere
   *         - <wayscript>
-  *             - the answer to the question of the <title> in wayscript form
-  *         - <handle> of <wayscript>
-  *             ( http://reluk.ca/project/waymaker/spec/javadoc/waymaker/top/android/Waynode.html#handle--
+  *             - the answer to the question of the <title>
+  *             - leading text is the answer in short
+  *                 ( http://reluk.ca/project/waymaker/spec/javadoc/waymaker/top/android/Waynode.html#answer--
+  *             - <handle> symbolizes the answer
+  *                 ( http://reluk.ca/project/waymaker/spec/javadoc/waymaker/top/android/Waynode.html#handle--
+  *             - the remaining elements answer the question in wayscript form
   *     - way elements:
   *         ( notebook 2015.2.20
   *         - <box>
