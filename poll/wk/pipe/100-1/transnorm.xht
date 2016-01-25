@@ -16,20 +16,15 @@
             Code the Android UI far enough to range the ways of the local wayrepo
             <!--
 
-/   - test asserts on clean build
-/       ! fails
-    = test restore
+    - framing it impressively
+        ( for realistic foretrials
+        = backshade foreground views
+            - to ensure visibility against back image
+        = add source link for back image
+            - visible only when zoomed to POLL
+          / - links to directory
+          // might fail or mislead
     = code the minimum in order to test a climb
-        - elaborating node view
-            ( else climbing is unrealistic
-/           - the handle
-/               = test for whitespace stripping
-            = commit
-                " Handles for waynodes.
-            = the summary
-                - right across screen width
-                - wayscope to eclipse it somehow when zoomed in
-        = add question display to design sketch of wayranging view
         = enable up climber in ForestV
             ( notebook 2016.1.1
             - but requesting voters (enqueuePeersRequest) on demand, not proactively
@@ -40,7 +35,7 @@
             = likewise back current use of enqueuePeersRequest to point of demand
                 - reduces unecessary polling, gives user more control
         = define real positions near root
-        = have node handles share same minimal width
+        = ensure that node handles share same minimal width
             - for stability of forest view
             - expandable within limits
         = ensure that animation works as expected
@@ -50,27 +45,6 @@
         = repopulate ForestV on forester movement
             - comparing candidate path vs. model
                 ( notebook 2015.12.26
-    [ forest view
-        = constrain candidate addition
-        = constrain peer addition
-            - also using the constraint to guard and constrain call to enqueuePeersRequest
-        = reconstrain on calibration change
-            - direct call from calibrator
-        = allow for case of overconstrained parent in ForestVCalibrator
-            ( deferred from above, for realistic test
-            - detected by squeezed height of down climber (bottom component) compared to up climber
-            - calibrated by (somehow) measuring height parent wants, compared with actual height available
-        - peer paging
-            ( notebook 2015.12.14, 15
-            - long press to enable paging control
-                - to prevent accidental paging
-              / - enabling is linked inversely to node specification
-              /     ( notebook 2015.12.16
-              /     - to prevent depaging of specific node
-              // then must do same for descent control
-                    - rather: automatically despecify in both cases
-                        - and respecify in back cases, provided nothing else specified meantime
-                - any other press will reveal a fading cue that explains the mechanism
 
                 -->
             </step>

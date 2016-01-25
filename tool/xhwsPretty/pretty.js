@@ -29,9 +29,15 @@
   *         - trailing punctuation is omitted
   *             - except a question mark is retained
   *     - framing elements:
-  *         - <title>
-  *             - the common question posed by the poll, that all positions answer
-  *             ( title of the leading position will rule, as I think I documented somewhere
+  *         - head
+  *             - <title>
+  *                 - the common question posed by the poll, that all positions answer
+  *                 ( title of the leading position will rule, as I think I documented somewhere
+  *                 ( http://reluk.ca/project/waymaker/spec/javadoc/waymaker/top/android/Waynode.html#question--
+  *             - <question>
+  *                 - <backImage src='URL'>
+  *                     - adjunct to pollar question of <title>
+  *                     ( http://reluk.ca/project/waymaker/spec/javadoc/waymaker/top/android/Waynode.html#questionImageLoc--
   *         - <wayscript>
   *             - the answer to the question of the <title>
   *             - leading text is the answer in short
