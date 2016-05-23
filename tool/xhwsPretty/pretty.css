@@ -1,6 +1,6 @@
 /** Styling for a prettified view of XHTML wayscript.
   *
-  * root> (f=tool/xhwsPretty/pretty.css; cp --interactive /mnt/lan/obsidian/var/www/localhost/htdocs/100-0/$f /home/mike/100-0/$f)
+  * root> (f=tool/xhwsPretty/pretty.css; sudo -u public cp --interactive /home/mike/100-0/$f /mnt/lan/obsidian/var/www/localhost/htdocs/100-0/$f)
   */
 @namespace h 'http://www.w3.org/1999/xhtml';
 @namespace w 'data:,wayrepo.wayscript';
