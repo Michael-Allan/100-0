@@ -16,24 +16,48 @@
             Code the Android UI far enough to range the ways of the local wayrepo
             <!--
 
-    - framing it impressively
-        ( for realistic foretrials
-        = backshade foreground views
-            - to ensure visibility against back image
-        = add source link for back image
-            - visible only when zoomed to POLL
-          / - links to directory
-          // might fail or mislead
-    = code the minimum in order to test a climb
+    [ icon imaging facility
+/       = somehow rotate icon for downClimber
+/       = answer
+/           ( http://stackoverflow.com/questions/37023687/how-do-i-set-a-group-parameter-of-vector-drawable-programmatically
+/           " You can't.  There's no way to alter the XML source definition on the fly.
+/             `AnimatedVectorDrawable` can alter an `android:rotation` parameter,
+/             but only to predefined values it seems, not programmatically.
+/               ( https://developer.android.com/reference/android/graphics/drawable/AnimatedVectorDrawable.html
+/           " An alternative solution is to rotate the `Canvas` when drawing it, as you currently do.
+/           " Or maybe wrap your `VectorDrawable` in a `RotateDrawable` and draw that instead.
+/               ( RotateDrawable
+/           " Or `setRotation` on the whole view.  Etc.
+/               ( https://developer.android.com/reference/android/view/View.html#setRotation(float)
+/       = answer
+/           ( http://stackoverflow.com/questions/8589373/rotate-a-button-or-the-text-inside-in-code
+/       = answer
+/           ( http://stackoverflow.com/questions/9428806/how-to-rotate-button-about-its-center-in-android
+/           The simplest solution deserves to be mentioned:
+/           button.setRotation
+/           Put that in your `onClick` method.  See the View API.
+/               ( https://developer.android.com/reference/android/view/View.html#setRotation(float)
+/       = delete test code in MenuDF
+        = commit
+    = update SDK
+    =! ForestVCalibrator assumes bottom aligned content of forest view
+        ( in test: forestV.downClimber.getHeight() < forestV.upClimber.getHeight()
+        - when apparently view is vertically centered
+    - coding the minimum in order to test a climb
         = enable up climber in ForestV
-            ( notebook 2016.1.1
-            - but requesting voters (enqueuePeersRequest) on demand, not proactively
-                = note in ServerCount need to test effect of slow responses in UI,
-                  where the current implementation might not allow for this
-                    - minimal allowance would be addition of information
-                      to indicate temporary|uncertain|pending state at point of effect
-            = likewise back current use of enqueuePeersRequest to point of demand
-                - reduces unecessary polling, gives user more control
+            - when
+                - peers viewer shows actor
+                - actor has voters
+                    = request voters of peer that becomes actor
+                        = show uncertain state of voters
+                            - by imaging as empty outline (bright)
+                                - thence to filled icon
+                                    - either enabled (bright) or disabled (dim)
+                - asserting !isRemotelyUsable where the current implementation might not allow for delay
+                - minimal allowance would be addition of information
+                  to indicate temporary|uncertain|pending state at point of effect
+                    - e.g. not knowing, pending enqueuePeersRequest for voters,
+                      whether up climber can actually climb
         = define real positions near root
         = ensure that node handles share same minimal width
             - for stability of forest view
