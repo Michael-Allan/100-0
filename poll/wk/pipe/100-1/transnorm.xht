@@ -6,7 +6,8 @@
         <title>What are the problems of the waykit?</title>
         </head>
     <body>
-        <wayscript xmlns='data:,wayrepo.wayscript'> <!-- <<< deindent -->
+        <wayscript xmlns='data:,wayrepo.wayscript' xmlns:h='http://www.w3.org/1999/xhtml'>
+            <!-- <<< deindent -->
 
 <box id='No'>
     No actual waykit to problematize
@@ -14,63 +15,38 @@
         <means href='http://reluk.ca/100-0/poll/x/pipe/100-0/act.xht'/>
         <step>
             Code the Android UI far enough to range the ways of the local wayrepo
-            <!--
-
-    [ icon imaging facility
-/       = somehow rotate icon for downClimber
-/       = answer
-/           ( http://stackoverflow.com/questions/37023687/how-do-i-set-a-group-parameter-of-vector-drawable-programmatically
-/           " You can't.  There's no way to alter the XML source definition on the fly.
-/             `AnimatedVectorDrawable` can alter an `android:rotation` parameter,
-/             but only to predefined values it seems, not programmatically.
-/               ( https://developer.android.com/reference/android/graphics/drawable/AnimatedVectorDrawable.html
-/           " An alternative solution is to rotate the `Canvas` when drawing it, as you currently do.
-/           " Or maybe wrap your `VectorDrawable` in a `RotateDrawable` and draw that instead.
-/               ( RotateDrawable
-/           " Or `setRotation` on the whole view.  Etc.
-/               ( https://developer.android.com/reference/android/view/View.html#setRotation(float)
-/       = answer
-/           ( http://stackoverflow.com/questions/8589373/rotate-a-button-or-the-text-inside-in-code
-/       = answer
-/           ( http://stackoverflow.com/questions/9428806/how-to-rotate-button-about-its-center-in-android
-/           The simplest solution deserves to be mentioned:
-/           button.setRotation
-/           Put that in your `onClick` method.  See the View API.
-/               ( https://developer.android.com/reference/android/view/View.html#setRotation(float)
-/       = delete test code in MenuDF
-        = commit
-    = update SDK
-    =! ForestVCalibrator assumes bottom aligned content of forest view
-        ( in test: forestV.downClimber.getHeight() < forestV.upClimber.getHeight()
-        - when apparently view is vertically centered
-    - coding the minimum in order to test a climb
-        = enable up climber in ForestV
-            - when
-                - peers viewer shows actor
-                - actor has voters
-                    = request voters of peer that becomes actor
-                        = show uncertain state of voters
-                            - by imaging as empty outline (bright)
-                                - thence to filled icon
-                                    - either enabled (bright) or disabled (dim)
-                - asserting !isRemotelyUsable where the current implementation might not allow for delay
-                - minimal allowance would be addition of information
-                  to indicate temporary|uncertain|pending state at point of effect
-                    - e.g. not knowing, pending enqueuePeersRequest for voters,
-                      whether up climber can actually climb
-        = define real positions near root
-        = ensure that node handles share same minimal width
-            - for stability of forest view
-            - expandable within limits
-        = ensure that animation works as expected
-            " setLayoutTransition( new /*default*/LayoutTransition() ); // animate layout changes
-            < http://developer.android.com/guide/topics/graphics/prop-animation.html#layout
-            - may need to customize using LayoutTransition.setAnimator
-        = repopulate ForestV on forester movement
-            - comparing candidate path vs. model
-                ( notebook 2015.12.26
-
-                -->
+            <h:pre>
+                = try to upgrade to latest Android image
+                    - testing for clearance of SAF bug
+                        ( https://code.google.com/p/android/issues/detail?id=210861
+                - coding the minimum in order to test a climb
+                    = enable up climber in ForestV
+                        - when
+                            - peers viewer shows actor
+                            - actor has voters
+                                = request voters of peer that becomes actor
+                                    = show uncertain state of voters
+                                        - by imaging as empty outline (bright)
+                                            - thence to filled icon
+                                                - either enabled (bright) or disabled (dim)
+                            - asserting !isRemotelyUsable where the current implementation
+                              might not allow for delay
+                            - minimal allowance would be addition of information
+                              to indicate temporary|uncertain|pending state at point of effect
+                                - e.g. not knowing, pending enqueuePeersRequest for voters,
+                                  whether up climber can actually climb
+                    = define real positions near root
+                    = ensure that node handles share same minimal width
+                        - for stability of forest view
+                        - expandable within limits
+                    = ensure that animation works as expected
+                        ' setLayoutTransition( new /*default*/LayoutTransition() ); // animate layout changes
+                        ( http://developer.android.com/guide/topics/graphics/prop-animation.html#layout
+                        - may need to customize using LayoutTransition.setAnimator
+                    = repopulate ForestV on forester movement
+                        - comparing candidate path vs. model
+                            ( notebook 2015.12.26
+                </h:pre>
             </step>
         <step id='BootS'>
             Allow the initial problems of the waykit to surface in this form
