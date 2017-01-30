@@ -13,6 +13,12 @@ h|html
 }
 
 
+h|a
+{
+    color: hsl( 200, 50%, 70% );
+}
+
+
 w|*
 {
     display: block;

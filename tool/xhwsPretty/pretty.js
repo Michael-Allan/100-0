@@ -77,8 +77,7 @@
 
     /** Appends one or more style classes to element e.
       *
-      *     @param newNames (String) The names of the new style classes to append,
-      *       separated by spaces.
+      *     @param newNames (String) The names of the new style classes to append, separated by spaces.
       */
     function appendStyleClass( newNames, e )
     {
@@ -133,8 +132,6 @@
 
       // Transform script elements.
       // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-     // var walker = document.createTreeWalker( body );
-     /// but IE9 wants all 4 arguments:
         var walker = document.createTreeWalker( body, NodeFilter.SHOW_ELEMENT, null, false );
         if( !walker ) return;
 
