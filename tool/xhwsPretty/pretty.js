@@ -69,7 +69,7 @@
   *
   * SWATCH
   *
-  *   root> (f=tool/xhwsPretty/pretty.js; cp --interactive /mnt/lan/obsidian/var/www/localhost/htdocs/100-0/$f /home/mike/100-0/$f)
+  *   root> (f=tool/xhwsPretty/pretty.js; cp --interactive /mnt/lan/obsidian/var/www/localhost/htdocs/project/100-0/$f /home/mike/project/100-0/$f)
   */
 ( function()
 {
