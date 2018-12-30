@@ -61,7 +61,7 @@
   *             - <means>
   *                 - link to means (optional to specify)
   *                 - serves only:
-  *                     - to implement means-ward links in web browsers
+  *                     - to implement means-ward links in Web browsers
   *                       where they cannot easily be generated automatically based on <end> links
   *                     - to set a default position for means-ward navigation when (the usual case)
   *                       multiple positions encode the same <end> link
