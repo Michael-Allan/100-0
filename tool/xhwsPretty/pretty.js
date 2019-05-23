@@ -33,17 +33,17 @@
   *             - <title>
   *                 - the common question posed by the poll, that all positions answer
   *                 ( title of the leading position will rule, as I think I documented somewhere
-  *                 ( http://reluk.ca/project/waymaker/spec/javadoc/waymaker/top/android/Waynode.html#question--
+  *                 ( http://reluk.ca/project/Waymaker/spec/javadoc/waymaker/top/android/Waynode.html#question--
   *             - <question>
   *                 - <backImage src='URL'>
   *                     - adjunct to pollar question of <title>
-  *                     ( http://reluk.ca/project/waymaker/spec/javadoc/waymaker/top/android/Waynode.html#questionImageLoc--
+  *                     ( http://reluk.ca/project/Waymaker/spec/javadoc/waymaker/top/android/Waynode.html#questionImageLoc--
   *         - <wayscript>
   *             - the answer to the question of the <title>
   *             - leading text is the answer in short
-  *                 ( http://reluk.ca/project/waymaker/spec/javadoc/waymaker/top/android/Waynode.html#answer--
+  *                 ( http://reluk.ca/project/Waymaker/spec/javadoc/waymaker/top/android/Waynode.html#answer--
   *             - <handle> symbolizes the answer
-  *                 ( http://reluk.ca/project/waymaker/spec/javadoc/waymaker/top/android/Waynode.html#handle--
+  *                 ( http://reluk.ca/project/Waymaker/spec/javadoc/waymaker/top/android/Waynode.html#handle--
   *             - the remaining elements answer the question in wayscript form
   *     - way elements:
   *         ( notebook 2015.2.20
